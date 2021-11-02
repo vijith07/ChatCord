@@ -10,6 +10,7 @@
 			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
 			crossorigin="anonymous"
 		/>
+		<link rel="manifest" href="/manifest.json">
 		<link rel="stylesheet" href="css/style.css" />
 		<title>ChatCord App</title>
 	</head>
@@ -45,5 +46,12 @@
 				</form>
 			</main>
 		</div>
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function () {
+				navigator.serviceWorker.register('/service-worker.js');
+				});
+			}
+		</script>
 	</body>
 </html>
